@@ -1,6 +1,6 @@
 # Credit-Scoring-and-Parameters
 
-#### Executive summary
+### Executive summary
 
 In this project, we analyzed the Single-Family Loan-Level Dataset from the U.S. Freddie Mac. This extensive dataset consists of two data files, a mortgage application file, and a repayment performance file, and our first objective is to build a behavioral scorecard predicting one-year-ahead default probability for each observation.
 
