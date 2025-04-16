@@ -1,6 +1,7 @@
 # Credit-Scoring-and-Parameters
 
-Executive summary
+#### Executive summary
+
 In this project, we analyzed the Single-Family Loan-Level Dataset from the U.S. Freddie Mac. This extensive dataset consists of two data files, a mortgage application file, and a repayment performance file, and our first objective is to build a behavioral scorecard predicting one-year-ahead default probability for each observation.
 
 We first gained a robust understanding of every variable in the datasets by reading the General User Guide. The response variable, a binary indicator, was created according to the delinquency status in the next 12 months. If a shorter observation window was due to early repayment or reasons arising from default, the corresponding value can still be determined. If there was neither enough observation nor relevant information, the target could not be determined and later the observation was removed.  Useful features were created, such as the rate of change in unpaid balance and the number of times not paying on time but not default. Then two datasets were merged and the joined data set was split into a training set, a test set, and an OOT sample. Finally, missing values in each feature were handled through imputation; if there were a substantial portion of missing values due to unknown reasons, that feature was deleted. Outliers were handled by removing the case or were left as is. The data cleaning procedures were done separately and consistently on two sets.
