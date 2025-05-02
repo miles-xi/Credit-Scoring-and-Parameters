@@ -11,3 +11,17 @@ We binned the remaining features using Weight of Evidence, creating a more meani
 The second task is to develop a time series model of the PD for ratings of loans that have distinct risk profiles from low to high. We obtained a series of breakpoints (which were the False Positive Rate) by approximating the ROC curve of the logistic regression model using a piecewise linear function, and mapped these breakpoints to the probability cutoffs, resulting in eight ratings. With these ratings, we put observations in the test set into their corresponding bins and time slots, getting eight time series of the default probability for each state, which was modeled using the SARMIAX model where exogenous variables are macroeconomic factors including the monthly unemployment rate and the House Price Index (HPI) obtained from St. Louis Fed. Finally, we obtained the long-run unemployment rate and estimated the HPI to forecast the loan’s performance in the OOT sample using the fitted time series model.
 
 For defaulted loans, we derived their LGD using the features of loss calculation and unpaid balance in the dataset. We performed a similar data cleaning procedure to the training, test, and OOT samples and then trained and fine-tuned an XGBoost model to predict LGDs. The model achieved an RMSE of 0.050 on the training and 0.068 on the test set. SHAP was employed to explain the feature's importance. Finally, we used the model to predict the LGD on the OOT set and trimmed the predicted values so that they satisfied the Basel III floor of 5%.
+
+
+### License and Usage Terms
+This repository and its contents are © 2025 Miles Xi. All rights reserved.
+
+You are welcome to: <br>
+• View and use the code and materials directly via this GitHub repository <br>
+• Use the code for educational or non-commercial personal projects, as long as you do so through GitHub
+
+However, you may not: <br>
+• Rehost, mirror, or redistribute this repository or any part of its content on third-party websites or platforms <br>
+• Use any automated means (e.g., scraping tools or bots) to copy or mirror the repository or its contents elsewhere
+
+Unauthorized redistribution or rehosting is strictly prohibited. Please contact me for permission if needed.
