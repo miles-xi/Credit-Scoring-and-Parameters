@@ -13,7 +13,6 @@ The second task is to develop a time series model of the PD for ratings of loans
 For defaulted loans, we derived their LGD using the features of loss calculation and unpaid balance in the dataset. We performed similar data cleaning procedure to the training, test, and OOT samples and then trained and fine-tuned an XGBoost model to predict LGDs. The model achieved an RMSE of 0.050 on the training and 0.068 on the test set. SHAP were employed to explain the feature importance. Finally, we used to model to predict the LGD on the whole OOT set and trimmed the predicted values so that they satisfied the Basel III floor of 5%.
  
 We simulated recovery rates using a uniform distribution to derive EAD, and with PD and LGD obtained above, we calculated the provision for a portfolio of loans in the OOT sample. We found that the provision accounts for 0.1878% of the portfolio value and is not sensitive to the recovery rates. This is likely due to low long-run PDs and small and stable predicted LGDs in the sample.
-![image](https://github.com/user-attachments/assets/3a723bb2-512d-4fd8-a778-09d845e44269)
 
 
 
